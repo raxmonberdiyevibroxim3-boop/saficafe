@@ -1,0 +1,18 @@
+
+:root{
+--brown:#493126;
+--brown-dark:#302019;
+--caramel:#B87945;
+--cream:#F3E8D7;
+--beige:#D6B58C;
+--olive:#75805B;
+--white:#FFFDF8;
+--text:#493126;
+--muted:#89796B;
+--border:rgba(73,49,38,.13);
+--heading:'Playfair Display',serif;
+--body:'Poppins',sans-serif;
+--container:1240px;
+--radius:12px;
+--transition:.3s ease;
+}
