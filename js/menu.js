@@ -10,47 +10,39 @@ const categoryNames={
     drink:"ICHIMLIKLAR"
 };
 
-// ================= ADMIN TAOMLARINI OLISH =================
-function getAdminMenu(){
-    try{
-        const data=JSON.parse(localStorage.getItem("safiCafeAdminMenu"))||[];
-        return Array.isArray(data)?data:[];
-    }catch(error){
-        return [];
-    }
-}
-
-// ================= YANGI TAOM KARTOCHKALARI =================
-function renderAdminMenu(){
+// ================= KARTOCHKALARNI CHIQARISH =================
+function renderMenu(){
     if(!menuGrid) return;
 
-    // Oldingi admin kartochkalarini olib tashlash
-    menuGrid.querySelectorAll(".admin-added-card").forEach(card=>{
-        card.remove();
-    });
+    const products=window.SAFI_MENU.getAll();
 
-    const products=getAdminMenu();
+    // Eski statik kartochkalarni tozalash
+    menuGrid.replaceChildren();
 
     products.forEach(item=>{
         const card=document.createElement("article");
-        card.className="menu-card admin-added-card";
+        card.className="menu-card";
         card.dataset.category=item.category;
 
-        // Rasm
+        // Rasm qismi
         const imageBox=document.createElement("div");
         imageBox.className="menu-card-image";
 
-        if(item.image){
-            const image=document.createElement("img");
-            image.src=item.image;
-            image.alt=item.name;
-            image.loading="lazy";
-            imageBox.appendChild(image);
-        }else{
-            imageBox.textContent="SAFI CAFÉ";
+        const image=document.createElement("img");
+        image.src=item.image;
+        image.alt=item.name;
+        image.loading="lazy";
+
+        imageBox.appendChild(image);
+
+        if(item.badge){
+            const badge=document.createElement("span");
+            badge.className="menu-badge";
+            badge.textContent=item.badge;
+            imageBox.appendChild(badge);
         }
 
-        // Karta ma'lumotlari
+        // Taom ma'lumotlari
         const info=document.createElement("div");
         info.className="menu-card-info";
 
@@ -62,17 +54,19 @@ function renderAdminMenu(){
         title.textContent=item.name;
 
         const description=document.createElement("p");
-        description.textContent="Safi Café menyusidagi yangi taom.";
+        description.textContent=item.description||"Safi Café menyusidagi mazali taom.";
 
-        // Narx va buyurtma
+        // Narx
         const bottom=document.createElement("div");
         bottom.className="menu-card-bottom";
 
         const price=document.createElement("strong");
-        price.textContent=Number(item.price).toLocaleString("uz-UZ")+" ";
+        price.append(document.createTextNode(
+            Number(item.price).toLocaleString("uz-UZ")+" "
+        ));
 
         const currency=document.createElement("small");
-        currency.textContent="so'm";
+        currency.textContent="so‘m";
         price.appendChild(currency);
 
         const orderLink=document.createElement("a");
@@ -90,7 +84,7 @@ function renderAdminMenu(){
     applyMenuFilter();
 }
 
-// ================= KATEGORIYA FILTRLARI =================
+// ================= FILTRLASH =================
 function applyMenuFilter(){
     const activeFilter=document.querySelector(".menu-filter.active");
     const filter=activeFilter?activeFilter.dataset.filter:"all";
@@ -98,11 +92,10 @@ function applyMenuFilter(){
     document.querySelectorAll(".menu-card").forEach(card=>{
         const category=card.dataset.category;
 
-        if(filter==="all"||category===filter){
-            card.classList.remove("hidden");
-        }else{
-            card.classList.add("hidden");
-        }
+        card.classList.toggle(
+            "hidden",
+            filter!=="all"&&category!==filter
+        );
     });
 }
 
@@ -114,13 +107,14 @@ menuFilters.forEach(button=>{
     });
 });
 
-// ================= SAYTGA YUKLASH =================
-renderAdminMenu();
-
-// Admin panel boshqa oynada taom qo'shsa,
-// menyu avtomatik yangilanadi.
+// ================= MA'LUMOTLAR YANGILANISHI =================
 window.addEventListener("storage",event=>{
     if(event.key==="safiCafeAdminMenu"){
-        renderAdminMenu();
+        renderMenu();
     }
 });
+
+window.addEventListener("safi-menu-updated",renderMenu);
+
+// ================= ISHGA TUSHIRISH =================
+renderMenu();

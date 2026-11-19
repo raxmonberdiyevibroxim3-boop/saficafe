@@ -34,13 +34,12 @@ function getData(key){
     }
 }
 
-let menu=getData("safiCafeAdminMenu");
+let menu=window.SAFI_MENU.getAll();
 let orders=getData("safiCafeAdminOrders");
 let reservations=getData("safiCafeAdminReservations");
 let customers=getData("safiCafeAdminCustomers");
-
 function saveMenu(){
-    localStorage.setItem("safiCafeAdminMenu",JSON.stringify(menu));
+    window.SAFI_MENU.save(menu);
 }
 
 // ================= YORDAMCHI FUNKSIYALAR =================
@@ -230,7 +229,7 @@ productForm.addEventListener("submit",async event=>{
             image=await compressImage(file);
         }
 
-        const oldItem=menu.find(item=>item.id===editingProductId);
+        const oldItem=menu.find(item=>String(item.id)===String(editingProductId));
 
         if(editingProductId!==null){
             if(!oldItem) return;
@@ -286,15 +285,15 @@ document.getElementById("menuList").addEventListener("click",event=>{
 
     if(!button) return;
 
-    const id=Number(button.dataset.id);
-    const action=button.dataset.action;
-    const item=menu.find(product=>product.id===id);
+const id=button.dataset.id;
+const action=button.dataset.action;
+const item=menu.find(product=>String(product.id)===String(id));
 
     if(!item) return;
 
     if(action==="delete"){
         if(confirm(item.name+" taomini o'chirmoqchimisiz?")){
-            menu=menu.filter(product=>product.id!==id);
+            menu=menu.filter(product=>String(product.id)!==String(id));
             saveMenu();
             renderMenu();
         }
