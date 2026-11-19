@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safi Café | Admin Panel</title>
+<link rel="stylesheet" href="/css/admin.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div class="admin-container">
+    <aside class="sidebar">
+        <h2 class="logo">SAFI <span>CAFÉ</span></h2>
+        <p class="sidebar-title">BOSHQARUV</p>
+        <nav>
+            <button class="nav-btn active" data-page="dashboard"><i class="fa-solid fa-chart-pie"></i> Dashboard</button>
+            <button class="nav-btn" data-page="menu"><i class="fa-solid fa-utensils"></i> Menyu</button>
+            <button class="nav-btn" data-page="orders"><i class="fa-solid fa-bag-shopping"></i> Buyurtmalar</button>
+            <button class="nav-btn" data-page="reservations"><i class="fa-solid fa-calendar-check"></i> Stol band qilish</button>
+            <button class="nav-btn" data-page="customers"><i class="fa-solid fa-users"></i> Mijozlar</button>
+            <button class="nav-btn" data-page="settings"><i class="fa-solid fa-gear"></i> Sozlamalar</button>
+        </nav>
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Saytga qaytish</a>
+    </aside>
+    <main class="main-content">
+        <header class="admin-header">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Safi Café boshqaruv paneliga xush kelibsiz!</p>
+            </div>
+            <div class="admin-user">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>Administrator</span>
+            </div>
+        </header>
+        <section class="page active" id="dashboard">
+            <h2>Umumiy ko‘rsatkichlar</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <i class="fa-solid fa-utensils"></i>
+                    <p>Jami taomlar</p>
+                    <h3 id="totalMenu">0</h3>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <p>Buyurtmalar</p>
+                    <h3 id="totalOrders">0</h3>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <p>Stol band qilish</p>
+                    <h3 id="totalReservations">0</h3>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-users"></i>
+                    <p>Mijozlar</p>
+                    <h3 id="totalCustomers">0</h3>
+                </div>
+            </div>
+        </section>
+        
+<section class="page" id="menu">
+    <h2>Menyu boshqaruvi</h2>
+    <button class="add-btn" id="addProductBtn" type="button">
+        <i class="fa-solid fa-plus"></i> Yangi taom qo‘shish
+    </button>
+    <form id="productForm" class="product-form" hidden>
+        <h3 id="productFormTitle">Yangi taom qo‘shish</h3>
+        <label>Taom nomi
+            <input type="text" id="productName" placeholder="Masalan: Cheese Burger" required>
+        </label>
+        <label>Taom narxi (so‘m)
+            <input type="number" id="productPrice" placeholder="50000" min="1" required>
+        </label>
+        <label>Taom kategoriyasi
+            <select id="productCategory" required>
+                <option value="">Kategoriyani tanlang</option>
+                <option value="burger">Burgerlar</option>
+                <option value="pizza">Pitsalar</option>
+                <option value="salad">Salatlar</option>
+                <option value="drink">Ichimliklar</option>
+            </select>
+        </label>
+        <label>Taom rasmi
+            <input type="file" id="productImage" accept="image/*" required>
+        </label>
+        <img id="productPreview" class="product-preview" alt="Taom rasmi" hidden>
+        <div class="form-buttons">
+            <button type="submit" class="add-btn">Saqlash</button>
+            <button type="button" class="cancel-btn" id="cancelProductBtn">Bekor qilish</button>
+        </div>
+    </form>
+    <div id="menuList"></div>
+</section>
+
+        <section class="page" id="orders">
+            <h2>Buyurtmalar</h2>
+            <div id="ordersList"></div>
+        </section>
+        <section class="page" id="reservations">
+            <h2>Stol band qilish</h2>
+            <div id="reservationsList"></div>
+        </section>
+        <section class="page" id="customers">
+            <h2>Mijozlar</h2>
+            <div id="customersList"></div>
+        </section>
+        <section class="page" id="settings">
+            <h2>Sozlamalar</h2>
+        </section>
+    </main>
+</div>
+<script src="/js/admin.js"></script>
+</body>
+</html>

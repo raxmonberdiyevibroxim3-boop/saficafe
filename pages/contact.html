@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aloqa | Safi Café</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/contact.css">
+<link rel="stylesheet" href="../responsive.css">
+</head>
+<body>
+<header class="header">
+<div class="header-container">
+<a href="../index.html" class="logo"><span class="logo-icon">S</span><span class="logo-text">SAFI<span>CAFÉ</span></span></a>
+<nav class="navigation" id="navigation">
+<a href="../index.html">Bosh sahifa</a>
+<a href="menu.html">Menyu</a>
+<a href="about.html">Biz haqimizda</a>
+<a href="gallery.html">Galereya</a>
+<a href="contact.html" class="active">Aloqa</a>
+</nav>
+<div class="header-actions">
+<button class="language-btn" id="languageBtn">UZ <span>⌄</span></button>
+<a href="booking.html" class="header-book">Stol band qilish</a>
+<button class="menu-toggle" id="menuToggle" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="navigation"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+<section class="contact-hero">
+<div>
+<span>SAFI CAFÉ</span>
+<h1>Biz bilan bog‘laning</h1>
+<p>Sizning fikringiz biz uchun muhim</p>
+</div>
+</section>
+<section class="contact-section">
+<div class="contact-heading">
+<span>BIZ BILAN ALOQA</span>
+<h2>Biz sizni kutamiz</h2>
+<p>Savollaringiz yoki takliflaringiz bo‘lsa, bizga yozing</p>
+</div>
+<div class="contact-container">
+<div class="contact-info">
+<h3>Aloqa ma'lumotlari</h3>
+<p class="contact-description">Biz bilan bog‘lanish uchun quyidagi ma'lumotlardan foydalaning.</p>
+<div class="contact-info-item"><span>⌖</span><div><h4>Manzilimiz</h4><p>Toshkent shahri, O‘zbekiston</p></div></div>
+<div class="contact-info-item"><span>☎</span><div><h4>Telefon</h4><p>+998 90 123 45 67</p></div></div>
+<div class="contact-info-item"><span>✉</span><div><h4>Email</h4><p>info@saficafe.uz</p></div></div>
+<div class="contact-info-item"><span>◷</span><div><h4>Ish vaqtimiz</h4><p>Har kuni: 09:00 – 23:00</p></div></div>
+</div>
+<div class="contact-form-box">
+<h3>Xabar yuborish</h3>
+<form id="contactForm">
+<div class="form-row">
+<div class="form-group"><label for="contactName">Ismingiz</label><input type="text" id="contactName" placeholder="Ismingizni kiriting" required></div>
+<div class="form-group"><label for="contactPhone">Telefon raqamingiz</label><input type="tel" id="contactPhone" placeholder="+998 90 123 45 67" required></div>
+</div>
+<div class="form-group"><label for="contactEmail">Email manzilingiz</label><input type="email" id="contactEmail" placeholder="example@gmail.com" required></div>
+<div class="form-group"><label for="contactMessage">Xabaringiz</label><textarea id="contactMessage" rows="5" placeholder="Xabaringizni yozing..." required></textarea></div>
+<button type="submit" class="contact-submit">Xabar yuborish</button>
+<p id="contactMessageStatus" class="contact-status"></p>
+</form>
+</div>
+</div>
+</section>
+<section class="contact-map">
+<iframe src="https://www.google.com/maps?q=Tashkent,Uzbekistan&output=embed" loading="lazy" allowfullscreen title="Safi Cafe joylashuvi"></iframe>
+</section>
+<footer class="footer">
+<div class="footer-container">
+<p>© 2026 Safi Café. Barcha huquqlar himoyalangan.</p>
+<p>Biz bilan unutilmas ta'mdan bahramand bo‘ling.</p>
+</div>
+</footer>
+<script src="../js/translations.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/contact.js"></script>
+</body>
+</html>

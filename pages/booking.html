@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stol band qilish | Safi Café</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/booking.css">
+<link rel="stylesheet" href="../responsive.css">
+</head>
+<body>
+<header class="header">
+<div class="header-container">
+<a href="../index.html" class="logo"><span class="logo-icon">S</span><span class="logo-text">SAFI<span>CAFÉ</span></span></a>
+<nav class="navigation" id="navigation">
+<a href="../index.html">Bosh sahifa</a>
+<a href="menu.html">Menyu</a>
+<a href="about.html">Biz haqimizda</a>
+<a href="gallery.html">Galereya</a>
+<a href="contact.html">Aloqa</a>
+</nav>
+<div class="header-actions">
+<button class="language-btn" id="languageBtn">UZ <span>⌄</span></button>
+<a href="booking.html" class="header-book active">Stol band qilish</a>
+<button class="menu-toggle" id="menuToggle" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="navigation"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+<section class="booking-hero">
+<div>
+<span>SAFI CAFÉ</span>
+<h1>Stolingizni band qiling</h1>
+<p>Yoqimli dam olish uchun joyingizni oldindan tanlang</p>
+</div>
+</section>
+<section class="booking-section">
+<div class="booking-heading">
+<span>ONLAYN BRON QILISH</span>
+<h2>Biz sizni kutamiz</h2>
+<p>Quyidagi shaklni to‘ldiring va stolingizni band qiling</p>
+</div>
+<div class="booking-container">
+<div class="booking-image">
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85" alt="Safi Café restorani">
+<div class="booking-image-text">
+<span>SAFI CAFÉ</span>
+<h3>Har bir lahza — alohida taassurot</h3>
+</div>
+</div>
+<div class="booking-form-box">
+<h3>Bron qilish shakli</h3>
+<form id="bookingForm">
+<div class="form-group">
+<label for="bookingName">Ismingiz</label>
+<input type="text" id="bookingName" placeholder="Ismingizni kiriting" required>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="bookingPhone">Telefon raqamingiz</label>
+<input type="tel" id="bookingPhone" placeholder="+998 90 123 45 67" required>
+</div>
+<div class="form-group">
+<label for="bookingGuests">Mehmonlar soni</label>
+<select id="bookingGuests" required>
+<option value="">Tanlang</option>
+<option value="1">1 kishi</option>
+<option value="2">2 kishi</option>
+<option value="3">3 kishi</option>
+<option value="4">4 kishi</option>
+<option value="5">5 kishi</option>
+<option value="6">6 kishi</option>
+<option value="7">7 kishi</option>
+<option value="8">8 kishi</option>
+</select>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="bookingDate">Sana</label>
+<input type="date" id="bookingDate" required>
+</div>
+<div class="form-group">
+<label for="bookingTime">Vaqt</label>
+<select id="bookingTime" required>
+<option value="">Vaqtni tanlang</option>
+<option value="09:00">09:00</option>
+<option value="10:00">10:00</option>
+<option value="11:00">11:00</option>
+<option value="12:00">12:00</option>
+<option value="13:00">13:00</option>
+<option value="14:00">14:00</option>
+<option value="15:00">15:00</option>
+<option value="16:00">16:00</option>
+<option value="17:00">17:00</option>
+<option value="18:00">18:00</option>
+<option value="19:00">19:00</option>
+<option value="20:00">20:00</option>
+<option value="21:00">21:00</option>
+<option value="22:00">22:00</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label for="bookingNote">Qo‘shimcha izoh</label>
+<textarea id="bookingNote" rows="3" placeholder="Maxsus istaklaringiz bo‘lsa yozing..."></textarea>
+</div>
+<button type="submit" class="booking-submit">Stolni band qilish</button>
+<p id="bookingStatus" class="booking-status"></p>
+</form>
+</div>
+</div>
+</section>
+<footer class="footer">
+<div class="footer-container">
+<p>© 2026 Safi Café. Barcha huquqlar himoyalangan.</p>
+<p>Biz bilan unutilmas ta'mdan bahramand bo‘ling.</p>
+</div>
+</footer>
+<script src="../js/translations.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/booking.js"></script>
+</body>
+</html>

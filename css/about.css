@@ -1,0 +1,28 @@
+
+.about-hero{min-height:330px;background:linear-gradient(rgba(25,20,16,.65),rgba(25,20,16,.65)),url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=85") center/cover;display:flex;align-items:center;justify-content:center;text-align:center;padding:50px 20px}
+.about-hero-content{color:white}
+.about-hero-content>span,.values-heading>span{color:#d8b78c;letter-spacing:4px;font-size:12px}
+.about-hero h1{font:600 55px 'Playfair Display',serif;margin:15px 0}
+.about-hero p{color:#eee;font-size:14px}
+.about-story{max-width:1200px;margin:auto;padding:100px 25px;display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+.story-image{height:480px;position:relative}
+.story-image img{width:100%;height:100%;object-fit:cover}
+.story-image>span{position:absolute;bottom:25px;left:25px;background:#fff;padding:15px 25px;color:#8b6244;letter-spacing:3px;font-size:13px}
+.about-label{color:#a77b50;font-size:12px;letter-spacing:3px}
+.story-content h2,.values-heading h2{font:600 38px 'Playfair Display',serif;color:#29231f;margin:15px 0 22px}
+.story-content p{font-size:14px;line-height:2;color:#777;margin-bottom:15px}
+.about-button{display:inline-block;background:#8b6244;color:white;text-decoration:none;padding:14px 25px;margin-top:15px;font-size:13px;transition:.3s}
+.about-button:hover{background:#29231f}
+.about-values{background:#f8f5f1;padding:85px 25px}
+.values-heading{text-align:center;margin-bottom:45px}
+.values-heading h2{margin-bottom:0}
+.values-grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.value-card{background:white;padding:35px 30px;position:relative;box-shadow:0 5px 25px rgba(0,0,0,.04)}
+.value-card>span{position:absolute;right:25px;top:25px;color:#d8c5b0;font-size:13px}
+.value-icon{font-size:32px;color:#a77b50;margin-bottom:20px}
+.value-card h3{font:600 25px 'Playfair Display',serif;color:#29231f;margin-bottom:12px}
+.value-card p{font-size:13px;color:#777;line-height:1.9}
+.about-quote{padding:90px 20px;text-align:center;background:#29231f;color:white}
+.about-quote>span{font-size:12px;letter-spacing:5px;color:#d8b78c}
+.about-quote h2{font:500 38px 'Playfair Display',serif;max-width:700px;margin:20px auto}
+@media(max-width:800px){.about-story{grid-template-columns:1fr;gap:35px;padding:65px 22px}.story-image{height:350px}.values-grid{grid-template-columns:1fr}.about-hero h1{font-size:42px}.story-content h2,.values-heading h2{font-size:32px}.about-quote h2{font-size:30px}}

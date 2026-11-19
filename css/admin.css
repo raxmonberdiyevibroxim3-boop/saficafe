@@ -1,0 +1,360 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+body{
+    background:#f7f5f1;
+    color:#29251f;
+}
+.admin-container{
+    display:flex;
+    min-height:100vh;
+}
+.sidebar{
+    width:260px;
+    min-height:100vh;
+    background:#29251f;
+    color:#fff;
+    padding:30px 18px;
+    display:flex;
+    flex-direction:column;
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+}
+.logo{
+    font-size:25px;
+    letter-spacing:2px;
+    margin-bottom:45px;
+    padding-left:12px;
+}
+.logo span{
+    color:#d6a77a;
+}
+.sidebar-title{
+    color:#a49b91;
+    font-size:11px;
+    letter-spacing:2px;
+    margin:0 12px 15px;
+}
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+.nav-btn{
+    border:none;
+    background:transparent;
+    color:#d6d0c8;
+    padding:15px 13px;
+    text-align:left;
+    font-size:14px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+.nav-btn i{
+    width:25px;
+    font-size:16px;
+}
+.nav-btn:hover,.nav-btn.active{
+    background:#b78359;
+    color:#fff;
+}
+.back-link{
+    margin-top:auto;
+    text-decoration:none;
+    color:#d6d0c8;
+    padding:15px 12px;
+    border-top:1px solid #49433b;
+}
+.back-link i{
+    margin-right:8px;
+}
+.main-content{
+    width:calc(100% - 260px);
+    margin-left:260px;
+    padding:30px 35px;
+}
+.admin-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#fff;
+    padding:23px 28px;
+    border-radius:12px;
+    margin-bottom:35px;
+    box-shadow:0 3px 15px rgba(0,0,0,.04);
+}
+.admin-header h1{
+    font-size:25px;
+    margin-bottom:7px;
+}
+.admin-header p{
+    color:#888;
+    font-size:13px;
+}
+.admin-user{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    font-weight:600;
+}
+.admin-user i{
+    font-size:32px;
+    color:#b78359;
+}
+.page{
+    display:none;
+}
+.page.active{
+    display:block;
+}
+.page h2{
+    font-size:22px;
+    margin-bottom:25px;
+}
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+.stat-card{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 3px 15px rgba(0,0,0,.04);
+    border:1px solid #eee9e2;
+}
+.stat-card i{
+    width:45px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f5e9dd;
+    color:#a66e42;
+    border-radius:10px;
+    font-size:20px;
+    margin-bottom:20px;
+}
+.stat-card p{
+    color:#888;
+    font-size:13px;
+    margin-bottom:10px;
+}
+.stat-card h3{
+    font-size:28px;
+}
+.add-btn{
+    background:#a66e42;
+    color:#fff;
+    border:none;
+    padding:13px 20px;
+    border-radius:7px;
+    font-size:14px;
+    cursor:pointer;
+    margin-bottom:25px;
+    transition:.3s;
+}
+.add-btn:hover{
+    background:#80502f;
+}
+.add-btn i{
+    margin-right:7px;
+}
+.table-wrap{
+    width:100%;
+    overflow-x:auto;
+    background:#fff;
+    border-radius:12px;
+    border:1px solid #eee9e2;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:600px;
+}
+th,td{
+    padding:17px 20px;
+    text-align:left;
+    border-bottom:1px solid #eee9e2;
+    font-size:14px;
+}
+th{
+    background:#f4eee7;
+    color:#665442;
+    font-weight:600;
+}
+td{
+    color:#555;
+}
+.table-action{
+    border:none;
+    background:#f2e8df;
+    color:#80502f;
+    padding:8px 11px;
+    border-radius:5px;
+    cursor:pointer;
+    margin:2px;
+}
+.table-action.delete{
+    background:#fbe8e6;
+    color:#c0392b;
+}
+.empty-state{
+    background:#fff;
+    padding:35px;
+    border-radius:12px;
+    color:#888;
+    text-align:center;
+    border:1px solid #eee9e2;
+}
+@media(max-width:1000px){
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+@media(max-width:650px){
+    .sidebar{
+        width:75px;
+        padding:20px 8px;
+    }
+    .logo{
+        font-size:13px;
+        padding:0;
+        text-align:center;
+    }
+    .logo span{
+        display:block;
+    }
+    .sidebar-title,.nav-btn:not(.active) {
+        font-size:0;
+    }
+    .nav-btn{
+        text-align:center;
+        padding:15px 5px;
+        font-size:0;
+    }
+    .nav-btn i{
+        font-size:19px;
+        width:auto;
+    }
+    .nav-btn.active{
+        font-size:0;
+    }
+    .back-link{
+        font-size:0;
+        text-align:center;
+    }
+    .back-link i{
+        font-size:18px;
+        margin:0;
+    }
+    .main-content{
+        width:calc(100% - 75px);
+        margin-left:75px;
+        padding:15px;
+    }
+    .admin-header{
+        padding:18px;
+        gap:10px;
+    }
+    .admin-header h1{
+        font-size:19px;
+    }
+    .admin-user span{
+        display:none;
+    }
+    .stats{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+}
+
+.status-select{
+    padding:8px;
+    border:1px solid #e5d8ca;
+    border-radius:6px;
+    background:#fff;
+    color:#80502f;
+    cursor:pointer;
+    font-size:13px;
+}
+.status-select:focus{
+    outline:1px solid #b78359;
+}
+
+
+/* TAOM QO'SHISH FORMASI */
+.product-form{
+    background:#fff;
+    padding:25px;
+    border:1px solid #eee9e2;
+    border-radius:12px;
+    margin-bottom:25px;
+    display:grid;
+    gap:16px;
+    max-width:650px;
+}
+.product-form[hidden]{
+    display:none;
+}
+.product-form h3{
+    font-size:20px;
+    margin-bottom:5px;
+}
+.product-form label{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    font-size:14px;
+    font-weight:600;
+    color:#665442;
+}
+.product-form input,.product-form select{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd4ca;
+    border-radius:7px;
+    outline:none;
+    background:#fff;
+    font-size:14px;
+}
+.product-form input:focus,.product-form select:focus{
+    border-color:#b78359;
+}
+.product-preview{
+    width:150px;
+    height:120px;
+    object-fit:cover;
+    border-radius:8px;
+}
+.form-buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+.form-buttons .add-btn{
+    margin:0;
+}
+.cancel-btn{
+    border:none;
+    background:#eee9e2;
+    color:#55483b;
+    padding:13px 20px;
+    border-radius:7px;
+    cursor:pointer;
+}
+.menu-thumb{
+    width:65px;
+    height:50px;
+    object-fit:cover;
+    border-radius:6px;
+}
+
